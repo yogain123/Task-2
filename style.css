@@ -1,0 +1,75 @@
+ body{
+            background-color: aliceblue;
+        }
+    .big-box{
+        margin-top: 20px;
+        border: 2px;
+        width: 230px;
+        border-style: solid;
+        height: auto;
+        padding-bottom: 20px;
+        border-radius: 5px;
+        color: black;
+        background-color: whitesmoke;
+        }
+        .inner-box{
+            width: 226px;
+            height: 35px;
+            padding-top: 3px;
+            background-color: steelblue;
+            border-radius: 0px;
+            color: black;
+            
+            border-style: hidden;
+            
+        }
+        .hola{
+            margin-top: 3px;
+        }
+        .inputing{
+            background: #fff url(http://i.stack.imgur.com/mJotv.gif) no-repeat right -10px bottom -10px;
+            height: 100px;
+            text-align: left;
+            padding-left:10;
+            padding-top:10;
+            padding-bottom:0.4em;
+            padding-right: 0.4em;
+            transition: background 0.4s;
+            width: 205px;
+            border-radius: 5px;
+            background-color: lightgray;
+            margin: 10px 10px 10px 10px;
+            
+        }
+        
+        .inputing.x  { background-position: right 10px bottom 10px;} /* (jQ) Show icon */
+.inputing.onX{ cursor: pointer;
+        }              /* (jQ) hover cursor style */
+.inputing::-ms-clear {display: none; width:0; height:0;} /* Remove IE default X */
+        .btn-primary{
+            margin-left: 20px;
+            border-radius: 10px;
+        }
+        .container{
+            margin-top: 30px;
+        }
+        textarea{
+            resize: none;
+        }
+       
+        .btn-primary{
+            margin-left: 20px;
+            border-radius: 5px;
+        }
+        .container{
+            margin-top: 30px;
+        }
+        textarea{
+            resize: none;
+        }
+        .row{
+            color: deepskyblue;
+        }
+        .glyphicon-plus{
+            font-size: 20px;
+        }

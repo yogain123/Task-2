@@ -1,0 +1,220 @@
+<html>
+
+<head>
+    <!--Angular JS -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+ <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.6/angular-filter.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     
+    <title>TASK</title>
+    
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
+   
+   <script>
+angular.module('myApp',['angular.filter']).controller('myController', function($scope){
+                                           
+                                    
+                                    $scope.disabled="false";
+                                    //$scope.hola.push({});
+                                    $scope.hola1 = [];
+                                    $scope.hola2 = [];
+                                    $scope.hola3 = [];
+                                    $scope.hola4 = [];
+    
+
+                                    //System.out.println(count);
+                                    //$scope.indexxx = false;
+                                   
+                                    $scope.add1 = (function()
+                                    {
+                                       $scope.hola1.push({});
+                                       //$scope.indexxx = false;
+
+                                    });
+                                    $scope.add2 = (function()
+                                    {
+                                       $scope.hola2.push({});
+                                       //$scope.indexxx = false;
+
+                                    });
+                                    $scope.add3 = (function()
+                                    {
+                                       $scope.hola3.push({});
+                                       //$scope.indexxx = false;
+
+                                    });
+                                    $scope.add4 = (function()
+                                    {
+                                       $scope.hola4.push({});
+                                       //$scope.indexxx = false;
+
+                                    });
+    
+    
+});
+        
+    
+    </script>
+    
+    </head>
+<body ng-app="myApp" ng-controller="myController">
+    
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6"><font size="5px"> All Projects</font></div>
+       <div class="col-sm-3"><span class="glyphicon glyphicon-plus"></span><font size="5px"> Add New Status</font></div>
+       <div class="col-sm-3"><span class="glyphicon glyphicon-trash"></span><font size="5px"> Delete All Cards</font></div>
+    </div>
+       <div class="row">
+           
+           
+       <div class="col-sm-3">
+           <div class="big-box">
+       <div class="inner-box">
+           <div class="hola">
+               
+           <div class="col-sm-9">
+                       <font color="white">Assigned Task</font>
+                                          </div>
+        
+        <div class="col-sm-3">
+            <font color="white"> <span class="glyphicon glyphicon-asterisk"></span></font> 
+                                                   </div>
+               
+               
+           </div>
+               </div>
+               <textarea rows="5" class="inputing form-control" placeholder="Write Your Status"></textarea> 
+               <div ng-repeat="x1 in hola1">  <textarea rows="5" class="inputing form-control" placeholder="Write Your Status"></textarea></div> 
+               <div class="row">
+               <div class="col-sm-6">
+         <button type="button" ng-click="add1()" class="btn-primary">Add Task</button>
+               </div>
+               
+                   </div>
+       
+                                                   </div>
+           
+        </div>
+           
+    
+          
+       
+       
+       
+       
+       <div class="col-sm-3">
+           <div class="big-box">
+       <div class="inner-box">
+           <div class="hola">
+               
+           <div class="col-sm-9">
+                       <font color="white">Completed</font>
+                                          </div>
+        
+        <div class="col-sm-3">
+            <font color="white"> <span class="glyphicon glyphicon-asterisk"></span></font> 
+                                                   </div>
+               
+               
+           </div>
+               </div>
+                   <textarea rows="5" class="inputing form-control" placeholder="Write Your Status"></textarea> 
+                <div ng-repeat="x2 in hola2">
+                    <textarea rows="5" class="inputing form-control" placeholder="Write Your Status"></textarea></div>
+         <div class="row">
+               <div class="col-sm-6">
+         <button ng-click="add2()" type="button" class="btn-primary">Add Task</button>
+               </div>
+               
+                   </div>
+       
+                                                   </div>
+           
+        </div>
+           
+           
+             <div class="col-sm-3">
+           <div class="big-box">
+       <div class="inner-box">
+           <div class="hola">
+               
+           <div class="col-sm-9">
+                       <font color="white">Pending</font>
+                                          </div>
+        
+        <div class="col-sm-3">
+            <font color="white"> <span class="glyphicon glyphicon-asterisk"></span></font> 
+                                                   </div>
+               
+               
+           </div>
+               </div>
+               <textarea ng-model="popo" rows="5" class="inputing form-control" placeholder="Write Your Status"></textarea>
+               
+              <div ng-repeat="x3 in hola3"><textarea ng-model="popo" rows="5" class="inputing form-control" placeholder="Write Your Status"></textarea> 
+               </div>
+               
+        <div class="row">
+               <div class="col-sm-6">
+         <button ng-click="add3()" type="button" class="btn-primary">Add Task</button>
+               </div>
+               
+                   </div>
+       
+                                                   </div>
+           
+        </div>
+           
+           
+             <div class="col-sm-3">
+           <div class="big-box">
+       <div class="inner-box">
+           <div class="hola">
+               
+           <div class="col-sm-9">
+                       <font color="white">Add a new list..</font>
+                                          </div>
+        
+        <div class="col-sm-3">
+            <font color="white"> <span class="glyphicon glyphicon-asterisk"></span></font> 
+                                                   </div>
+               
+               
+           </div>
+               </div>
+                                <textarea rows="5" class="inputing form-control" placeholder="Write Your Status"></textarea> 
+
+               <div ng-repeat="x4 in hola4"><textarea rows="5" class="inputing form-control" placeholder="Write Your Status"></textarea> </div>
+                     <div class="row">
+               <div class="col-sm-6">
+         <button ng-click="add4()" type="button" class="btn-primary">Add Task</button>
+               </div>
+              
+                   </div>
+       
+                                                   </div>
+           
+        </div>
+           
+           
+           
+      
+       </div>
+    </div>
+    
+    
+    </body>
+
+
+
+</html>
