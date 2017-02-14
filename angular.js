@@ -9,16 +9,28 @@ app.controller('myController', function($scope){
                                     $scope.hola2 = [{}];
                                     $scope.hola3 = [{}];
                                     $scope.hola4 = [{}];
+    
+                                    $scope.change = true;
+    
                                     $scope.mains = [];
     
-                                    
-                                   
+                                    $scope.addNewStatus = (function(){
+                                        
+                                          $scope.mains.push({});
+                                        
+                                    });
     
-                                   
-    
-
-                                    //System.out.println(count);
-                                    //$scope.indexxx = false;
+                                    $scope.deleteAllCards = (function()
+                                    {
+                                        $scope.hola1 = [];
+                                        $scope.hola2 = [];
+                                        $scope.hola3 = [];
+                                        $scope.hola4 = [];
+                                        $scope.mains = [];
+                                        
+                                        $scope.change = false;
+                                        
+                                    });
                                    
                                     $scope.add1 = (function()
                                     {
@@ -52,12 +64,7 @@ app.controller('myController', function($scope){
 
                                     });
     
-                                    $scope.newStatus = (function()
-                                    {
-                                         $scope.mains = [];
-                                         $scope.mains.push({});
-                                        
-                                    });
+                                  
     
     
 });
