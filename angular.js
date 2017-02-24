@@ -1,71 +1,40 @@
-app.controller('myController', function($scope){
-                                           
-                                    
-                                    $scope.disabled="false";
-                                    
-                                  
-                                    //$scope.hola.push({});
-                                    $scope.hola1 = [{}];
-                                    $scope.hola2 = [{}];
-                                    $scope.hola3 = [{}];
-                                    $scope.hola4 = [{}];
+app.controller("myController",function($scope){
     
-                                    $scope.change = true;
+    //var countParent = 1;
+    var countChild = 1;
     
-                                    $scope.mains = [];
-    
-                                    $scope.addNewStatus = (function(){
-                                        
-                                          $scope.mains.push({});
-                                        
-                                    });
-    
-                                    $scope.deleteAllCards = (function()
-                                    {
-                                        $scope.hola1 = [];
-                                        $scope.hola2 = [];
-                                        $scope.hola3 = [];
-                                        $scope.hola4 = [];
-                                        $scope.mains = [];
-                                        
-                                        $scope.change = false;
-                                        
-                                    });
-                                   
-                                    $scope.add1 = (function()
-                                    {
-                                       $scope.hola1.push({});
-                                       //$scope.indexxx = false;
-
-                                    });
-                                    
-                                    $scope.remove = (function($index)
-                                    {
-                                        $scope.hola1.splice($index,1)
-                                        
-                                    });
-    
-                                    $scope.add2 = (function()
-                                    {
-                                       $scope.hola2.push({});
-                                       //$scope.indexxx = false;
-
-                                    });
-                                    $scope.add3 = (function()
-                                    {
-                                       $scope.hola3.push({});
-                                       //$scope.indexxx = false;
-
-                                    });
-                                    $scope.add4 = (function()
-                                    {
-                                       $scope.hola4.push({});
-                                       //$scope.indexxx = false;
-
-                                    });
-    
-                                  
+    $scope.parentStatus=[
+        {"assignTask":"Completed","child":[{"id":countChild}]},
+        {"assignTask":"Pending","child":[{"id":countChild}]},
+        {"assignTask":"On Progress","child":[{"id":countChild}]}
+    ]
     
     
-});
+    $scope.addTask = function(id)
+    {
+        $scope.parentStatus[id].child.push({})
+    }
+    
+    $scope.addNewStatus = function()
+    {
         
+        $scope.assignTask = window.prompt("Please Enter Name Of Status","")
+        $scope.parentStatus.push({"assignTask":$scope.assignTask,"child":[{"id":countChild}]})
+    }
+    
+    $scope.remove = function(parentId,childId)
+    {
+         $scope.parentStatus[parentId].child.splice(childId,1)
+    }
+    
+    $scope.deleteAllCards = function()
+    {
+        $scope.parentStatus = [];
+    }
+    
+    $scope.deleteAllTaskOfStatus = function(id)
+    {
+        $scope.parentStatus[id].child = [];
+    }
+
+});

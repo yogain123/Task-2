@@ -1,27 +1,25 @@
-    <html>
+<!DOCTYPE html>    
+<html>
 
     <head>
         <!--Angular JS -->
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+         <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.6/angular-filter.js"></script>
 
-    <!-- Latest compiled JavaScript -->
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>TASK</title>
 
         <link rel="stylesheet" type="text/css" href="style.css">
-    <!--    <script src="script.js"></script> -->
-
-
-
-        </head>
+        <!--    <script src="script.js"></script> -->
+    </head>
     <body ng-app="myApp" ng-controller="myController">
 
     <div class="container">
@@ -35,252 +33,56 @@
            
 
            
+            <div ng-repeat="parent in parentStatus">   
                
-               
-           <div class="col-sm-3" ng-show="change">
-               <div class="big-box">
+           <div class="col-sm-3">
+            <div class="big-box">
            <div class="inner-box">
                <div class="hola">
                    
                 
 
                <div class="col-sm-8">
-                           <font color="white">Assigned Task</font>
+                           <font color="white"><span>{{parent.assignTask}}</font>
                                               </div>
 
             <div class="col-sm-4">
              <div class="dropdown">
-    <button class="btn btn-primary" data-toggle="dropdown"> <span class="glyphicon glyphicon-asterisk"></span>
-   </button>
-    <ul class="dropdown-menu">
-      <li><a href="#">Add New task</a></li>
-      <li><a href="#">Delete All Task</a></li>
-      <li><a href="#">Delete Status</a></li>
-    </ul>
-  </div>
-                                                       </div>
+                    <button class="btn btn-primary" data-toggle="dropdown"> <span class="glyphicon glyphicon-asterisk"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a href="#" ng-click="addTask($index)">Add New task</a></li>
+                      <li><a href="#" ng-click="deleteAllTaskOfStatus($index)">Delete All Task</a></li>
+                    </ul>
+            </div>
+           </div>
                        
                    
                    
 
-
                </div>
                    </div>
                  
-                   <div ng-repeat="x1 in hola1"> 
+                  <div ng-repeat="child in parent.child"> 
                        <textarea rows="5" class="inputing form-control" placeholder="Write Your Status"></textarea>
                      
-                     <span class="delete glyphicon glyphicon-trash" ng-click="remove($index)"></span> 
+                     <span class="delete glyphicon glyphicon-trash" ng-click="remove($parent.$index,$index)"></span> 
                    </div> 
                    <div class="row">
                    <div class="col-sm-6">
-             <button type="button" ng-click="add1()" class="btn-primary">Add Task</button>
+             <button type="button" ng-click="addTask($index)" class="btn-primary">Add Task</button>
                    </div>
-
-                       </div>
-
-                                                       </div>
-
-            </div>
-
-
-
-
-
-
-
-           <div class="col-sm-3"  ng-show="change">
-               <div class="big-box">
-           <div class="inner-box">
-               <div class="hola">
-                   
-                
-
-               <div class="col-sm-8">
-                           <font color="white">Assigned Task</font>
-                                              </div>
-
-            <div class="col-sm-4">
-             <div class="dropdown">
-    <button class="btn btn-primary" data-toggle="dropdown"> <span class="glyphicon glyphicon-asterisk"></span>
-   </button>
-    <ul class="dropdown-menu">
-      <li><a href="#">Add New task</a></li>
-      <li><a href="#">Delete All Task</a></li>
-      <li><a href="#">Delete Status</a></li>
-    </ul>
-  </div>
-                                                       </div>
-                       
-                   
-                   
-
-
                </div>
-                   </div>
-
-                    <div ng-repeat="x2 in hola2">
-                        <textarea rows="5" class="inputing form-control" placeholder="Write Your Status"></textarea></div>
-             <div class="row">
-                   <div class="col-sm-6">
-             <button ng-click="add2()" type="button" class="btn-primary">Add Task</button>
-                   </div>
-
-                       </div>
-
-                                                       </div>
-
+                   </div> 
+              
+                </div>
+                </div>
             </div>
-
-
-                 <div class="col-sm-3"  ng-show="change">
-               <div class="big-box">
-           <div class="inner-box">
-               <div class="hola">
-                   
-                
-
-               <div class="col-sm-8">
-                           <font color="white">Assigned Task</font>
-                                              </div>
-
-            <div class="col-sm-4">
-             <div class="dropdown">
-    <button class="btn btn-primary" data-toggle="dropdown"> <span class="glyphicon glyphicon-asterisk"></span>
-   </button>
-    <ul class="dropdown-menu">
-      <li><a href="#">Add New task</a></li>
-      <li><a href="#">Delete All Task</a></li>
-      <li><a href="#">Delete Status</a></li>
-    </ul>
-  </div>
-                                                       </div>
-                       
-                   
-                   
-
-
-               </div>
-                   </div>
-                 
-
-                  <div ng-repeat="x3 in hola3"><textarea ng-model="popo" rows="5" class="inputing form-control" placeholder="Write Your Status"></textarea> 
-                   </div>
-
-            <div class="row">
-                   <div class="col-sm-6">
-             <button ng-click="add3()" type="button" class="btn-primary">Add Task</button>
-                   </div>
-
-                       </div>
-
-                                                       </div>
-
-            </div>
-
-
-                 <div class="col-sm-3"  ng-show="change">
-               <div class="big-box">
-           <div class="inner-box">
-                <div class="hola">
-                   
-                
-
-               <div class="col-sm-8">
-                           <font color="white">Assigned Task</font>
-                                              </div>
-
-            <div class="col-sm-4">
-             <div class="dropdown">
-    <button class="btn btn-primary" data-toggle="dropdown"> <span class="glyphicon glyphicon-asterisk"></span>
-   </button>
-    <ul class="dropdown-menu">
-      <li><a href="#">Add New task</a></li>
-      <li><a href="#">Delete All Task</a></li>
-      <li><a href="#">Delete Status</a></li>
-    </ul>
-  </div>
-                                                       </div>
-                       
-                   
-                   
-
-
-               </div>
-                   </div>
-                                  
-
-                   <div ng-repeat="x4 in hola4"><textarea rows="5" class="inputing form-control" placeholder="Write Your Status"></textarea> </div>
-                         <div class="row">
-                   <div class="col-sm-6">
-             <button ng-click="add4()" type="button" class="btn-primary">Add Task</button>
-                   </div>
-
-                       </div>
-
-                                                       </div>
-
-            </div>
-        
-              <div ng-repeat="main in mains">
-            
-               <div class="col-sm-3">
-               <div class="big-box">
-           <div class="inner-box">
-               <div class="hola">
-                   
-                
-
-               <div class="col-sm-8">
-                           <font color="white">Assigned Task</font>
-                                              </div>
-
-            <div class="col-sm-4">
-             <div class="dropdown">
-    <button class="btn btn-primary" data-toggle="dropdown"> <span class="glyphicon glyphicon-asterisk"></span>
-   </button>
-    <ul class="dropdown-menu">
-      <li><a href="#">Add New task</a></li>
-      <li><a href="#">Delete All Task</a></li>
-      <li><a href="#">Delete Status</a></li>
-    </ul>
-  </div>
-                                                       </div>
-                       
-                   
-                   
-
-
-               </div>
-                   </div>
-                                  
-
-                   <div ng-repeat="x4 in hola4"><textarea rows="5" class="inputing form-control" placeholder="Write Your Status"></textarea> </div>
-                         <div class="row">
-                   <div class="col-sm-6">
-             <button ng-click="add4()" type="button" class="btn-primary">Add Task</button>
-                   </div>
-
-                       </div>
-
-                                                       </div>
-
-            </div>
-            
-        
         </div>
-               </div>
-        
-  
-           
-        </div>
-
-
         <script src="app.js"></script>
         <script src="angular.js"></script>
 
-        </body>
+    </body>
 
 
-
-    </html>
+</html>
