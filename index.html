@@ -53,6 +53,7 @@
                     <ul class="dropdown-menu">
                       <li><a href="#" ng-click="addTask($index)">Add New task</a></li>
                       <li><a href="#" ng-click="deleteAllTaskOfStatus($index)">Delete All Task</a></li>
+                      <li><a href="#" ng-click="deleteThisStatus($index)">Delete This Status</a></li>
                     </ul>
             </div>
            </div>
@@ -66,7 +67,7 @@
                   <div ng-repeat="child in parent.child"> 
                        <textarea rows="5" class="inputing form-control" placeholder="Write Your Status"></textarea>
                      
-                     <span class="delete glyphicon glyphicon-trash" ng-click="remove($parent.$index,$index)"></span> 
+                     <span class="glyphicon glyphicon-trash-new" ng-click="remove($parent.$index,$index)"></span> 
                    </div> 
                    <div class="row">
                    <div class="col-sm-6">

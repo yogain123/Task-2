@@ -6,7 +6,7 @@ app.controller("myController",function($scope){
     $scope.parentStatus=[
         {"assignTask":"Completed","child":[{"id":countChild}]},
         {"assignTask":"Pending","child":[{"id":countChild}]},
-        {"assignTask":"On Progress","child":[{"id":countChild}]}
+        {"assignTask":"In Progress","child":[{"id":countChild}]}
     ]
     
     
@@ -35,6 +35,10 @@ app.controller("myController",function($scope){
     $scope.deleteAllTaskOfStatus = function(id)
     {
         $scope.parentStatus[id].child = [];
+    }
+    $scope.deleteThisStatus = function(id)
+    {
+        $scope.parentStatus.splice(id,1);
     }
 
 });

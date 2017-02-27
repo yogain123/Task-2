@@ -7,7 +7,7 @@
         width: 230px;
         border-style: solid;
         height: auto;
-        padding-bottom: 5px;
+        padding-bottom: 8px;
         border-radius: 5px;
         color: black;
         background-color: whitesmoke;
@@ -75,8 +75,11 @@
         }
 
 
-.delete
+
+.glyphicon-trash-new:before
 {
-    margin-top: -34px;
-    margin-left: 190px
+    position: absolute;
+    margin-top: -44px;
+    margin-left: 190px;
+    content: "\e020";
 }
